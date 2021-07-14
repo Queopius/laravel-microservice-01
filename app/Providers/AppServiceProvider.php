@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use App\Models\{
-    Category
+    Category, Company
 };
 use App\Observers\{
-    CategoryObserver
+    CategoryObserver, CompanyObserver
 };
 use Illuminate\Support\ServiceProvider;
 
@@ -30,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Category::observe(CategoryObserver::class);
+        Company::observe(CompanyObserver::class);
     }
 }
